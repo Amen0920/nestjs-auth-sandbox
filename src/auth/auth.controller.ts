@@ -5,7 +5,7 @@ import { AuthService } from './auth.service';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post()
+  @Post('register')
   async registerUser(@Headers('authorization') token: string) {
     return await this.authService.register(token);
   }
