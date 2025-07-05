@@ -16,4 +16,9 @@ export class AuthController {
   async registerUser(@Headers('authorization') token: string) {
     return await this.authService.register(token);
   }
+
+  @Post('login')
+  loginUser(@Headers('authorization') token: string) {
+    return this.authService.login(token);
+  }
 }
